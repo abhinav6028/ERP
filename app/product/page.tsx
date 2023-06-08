@@ -1,9 +1,21 @@
+"use client"
+import { Grid } from '@mui/material'
+import Head from 'next/head'
 import React from 'react'
+import TableUi from '../../Components/UI/TableUi/TableUi'
 
-function page() {
-  return (
-    <div>page</div>
-  )
+function page(props: any) {
+
+
+
+    return (
+
+        <Grid>
+
+            <TableUi />
+
+        </Grid>
+    )
 }
 
 export default page
@@ -56,7 +68,7 @@ export default page
 //     console.log("@@@@@@@@@@", data);
 
 //     return (
-//         <div>page</div>
+//         <Grid>page</Grid>
 //     )
 // }
 
