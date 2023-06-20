@@ -30,6 +30,8 @@ function page() {
 
         editPath="category"
 
+        fileName="category"
+
       />
 
     </Grid>

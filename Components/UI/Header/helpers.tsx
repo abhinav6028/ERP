@@ -4,10 +4,10 @@ export const NAV_ITEMS = [
         name: 'HOME',
         path: '/'
     },
-    {
-        name: 'STOCK',
-        path: '/product'
-    },
+    // {
+    //     name: 'STOCK',
+    //     path: '/product'
+    // },
     {
         name: 'PRODUCT',
         path: '/product'

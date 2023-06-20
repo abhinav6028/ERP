@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client"
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation';
 import React from 'react'
 import DetailPage from '../../../../Components/UI/DetailPage/DetailPage';
 import { useQueryFetchById } from '../../../../hooks/useFetch';
 
-function page() {
+export default function page() {
 
   const { id } = useParams();
 
-  const data = useQueryFetchById('products', id)
+  const data = useQueryFetchById('categories', id)
 
   const finalData = data.fetchedData;
 
@@ -18,36 +18,18 @@ function page() {
   const fieledItems = [
 
     {
-      fieledName: "Product Name",
+      fieledName: "Category Name",
       itemName: finalData?.name
     },
     {
-      fieledName: "Brand",
-      itemName: finalData?.brand
-    },
-    {
-      fieledName: "Product Name",
-      itemName: finalData?.code
-    },
-    {
-      fieledName: "Unit",
-      itemName: finalData?.unit
-    },
-    {
-      fieledName: "Category",
-      itemName: finalData?.category?.name
-    },
-    {
-      fieledName: "Sub Category",
-      itemName: finalData?.subcategory?.name
+      fieledName: "Description",
+      itemName: finalData?.description
     },
     {
       fieledName: "Created Date",
       itemName: finalData?.createdAt
-    },
-
+    }
   ]
-
 
   return (
 
@@ -61,5 +43,3 @@ function page() {
 
   )
 }
-
-export default page 

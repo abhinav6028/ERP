@@ -9,7 +9,7 @@ export default function TableUi(props: any) {
 
     const router = useRouter();
 
-    const { TABLE_HEAD, TABLE_CELL, API_NAME, editPath } = props
+    const { TABLE_HEAD, TABLE_CELL, API_NAME, fileName } = props
 
     const { fetchedData } = useQueryFetch(API_NAME);
 
@@ -38,6 +38,12 @@ export default function TableUi(props: any) {
 
                             <TableRow>
 
+                                <TableCell align="center">
+
+                                    <Typography sx={{ fontWeight: 600 }} variant='h6'>SI NO</Typography>
+
+                                </TableCell>
+
                                 {
                                     TABLE_HEAD.map((table_head: any, index: any) =>
 
@@ -64,13 +70,12 @@ export default function TableUi(props: any) {
                             {
                                 fetchedData?.map((data: any, index: any) =>
 
-                                    <TableRow key={index}
-                                        sx={{
-                                            "&:hover": {
-                                                backgroundColor: ' #E5E4E2',
+                                    <TableRow onClick={() => router.push(`/${fileName}/detailpage/${data.id}`)} key={index} sx={{ "&:hover": { backgroundColor: ' #E5E4E2', } }}>
 
-                                            }
-                                        }}>
+                                        <TableCell align="center">
+
+                                            <Typography sx={{ fontWeight: 550 }}> {index + 1} </Typography>
+                                        </TableCell>
 
                                         {
 
@@ -88,17 +93,13 @@ export default function TableUi(props: any) {
 
                                         <TableCell align="center">
 
-                                            <Edit editPath={editPath} id={data.id} />
+                                            <Edit fileName={fileName} id={data.id} />
 
                                             <Delete url={API_NAME} id={data.id} />
 
                                         </TableCell>
 
-                                        {/* <TableCell align="center">
-
-                                           
-
-                                        </TableCell> */}
+                                       
 
 
                                     </TableRow>
