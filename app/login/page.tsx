@@ -18,7 +18,7 @@ function page() {
 
     },
 
-    validationSchema: logInSchema,
+    //validationSchema: logInSchema,
 
     onSubmit: values => {
 

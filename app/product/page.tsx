@@ -17,11 +17,6 @@ function page() {
 
     <Grid>
 
-
-
-
-
-
       <ProductTable
 
         heading="TOTAL STOCKS"
@@ -35,7 +30,6 @@ function page() {
         API_NAME="products"
 
         editPath="product"
-
 
       />
 

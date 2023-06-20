@@ -21,7 +21,7 @@ function page() {
 
   const finalData = data.fetchedData;
 
-  console.log("id", finalData?.id);
+  //console.log("id", finalData?.id);
 
   // console.log("//////////////", finalData);
 

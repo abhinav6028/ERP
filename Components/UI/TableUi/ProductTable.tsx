@@ -4,7 +4,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useQueryFetch } from "../../../hooks/useFetch";
 import { Edit } from "../ActionIcons/ActionIcons";
-import AddIcon from '@mui/icons-material/Add';
+import TabPagination from "../Pagination/Pagination";
 
 function ProductTable(props: any) {
 
@@ -48,6 +48,13 @@ function ProductTable(props: any) {
 
                             <TableRow>
 
+                                <TableCell align="center">
+
+                                    <Typography sx={{ fontWeight: 600 }} variant='h6'>SI <br /> no </Typography>
+
+                                </TableCell>
+
+
                                 {
                                     TABLE_HEAD.map((table_head: any, index: any) =>
 
@@ -71,18 +78,18 @@ function ProductTable(props: any) {
 
                         <TableBody>
 
+
+
                             {
                                 fetchedData?.map((data: any, index: any) =>
 
-                                    <TableRow key={index}
+                                    <TableRow key={index} onClick={() => router.push(`/product/detailpage/${data.code}`)} sx={{ "&:hover": { backgroundColor: ' #E5E4E2', } }}>
 
-                                        onClick={() => router.push(`/${editPath}/${data.code}`)}
+                                        <TableCell align="center">
 
-                                        sx={{
-                                            "&:hover": {
-                                                backgroundColor: ' #E5E4E2',
-                                            }
-                                        }}>
+                                            <Typography sx={{ fontWeight: 550 }}> {index + 1} </Typography>
+
+                                        </TableCell>
 
                                         {
 
@@ -114,6 +121,14 @@ function ProductTable(props: any) {
                     </Table>
 
                 </TableContainer>
+
+
+
+                {/* <TabPagination /> */}
+
+
+
+                
 
             </Grid>
 
